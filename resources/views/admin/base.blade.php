@@ -36,7 +36,7 @@
             </a>
 
 
-            
+
             <a href="/admin">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-dashboard"></i>
@@ -44,13 +44,24 @@
                 </li>
             </a>
 
+            <a href="/admin/kategori">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-cube"></i>
+                    <span class="mx-2">Master Kategori</span>
+                </li>
+            </a>
             <a href="/admin/produk">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-cube"></i>
                     <span class="mx-2">Master Produk</span>
                 </li>
             </a>
-
+            <a href="/admin/bank">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-cube"></i>
+                    <span class="mx-2">Master Bank</span>
+                </li>
+            </a>
 
             <a href="/admin/pelanggan">
                 <li href="#" class="nav-link t-white">
@@ -69,7 +80,7 @@
 
             </a>
 
-           
+
 
 
             <a href="/logout" class="mt-auto">

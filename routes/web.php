@@ -80,21 +80,30 @@ Route::get('/user/profil', function () {
 });
 
 
-Route::get('/admin', function () {
-    return view('admin/dashboard');
+
+Route::prefix('/admin')->group(function (){
+    Route::get('/', function () {
+        return view('admin/dashboard');
+    });
+
+    Route::get('/bank', function () {
+        return view('admin.bank.bank');
+    });
+
+    Route::get('/produk', function () {
+        return view('admin/produk/produk');
+    });
+
+    Route::get('/pelanggan', function () {
+        return view('admin/pelanggan/pelanggan');
+    });
+
+    Route::get('/pesanan', function () {
+        return view('admin/pesanan/pesanan');
+    });
 });
 
-Route::get('/admin/produk', function () {
-    return view('admin/produk/produk');
-});
 
-Route::get('/admin/pelanggan', function () {
-    return view('admin/pelanggan/pelanggan');
-});
-
-Route::get('/admin/pesanan', function () {
-    return view('admin/pesanan/pesanan');
-});
 
 
 
