@@ -8,48 +8,21 @@
     <section>
         <div style="height: 57px"></div>
 
-        <div class="slider">
-            <img src="https://ngalam.co/wp-content/uploads/2017/05/IMG_20170524_111824-681x511.jpg" />
-            <img src="https://i.ytimg.com/vi/irNL9frXvqE/maxresdefault.jpg" />
+        <div id="slider" class="">
+            <div style="height: 500px" class="w-100 shine">
+
+            </div>
         </div>
 
         <div style="height: 50px"></div>
     </section>
     <section class="container">
-        <h4 class="text-center fw-bold">Kategori Pilihan</h4>
-
-        <div class="slider-kategori">
-            <div>
-                <a class="card-kategori" href="/kategori">
-                    <img
-                        src="https://dynamic.zacdn.com/wg4qiGb0sFVvz_8zkSpPREj-5fE=/fit-in/346x500/filters:quality(90):fill(ffffff)/http://static.id.zalora.net/p/ocean-toy-0853-7195672-1.jpg">
-                    <p class="title">Mainan Anak</p>
-
-                </a>
-            </div>
-            <div>
-                <a class="card-kategori" href="/kategori">
-                    <img
-                        src="https://dynamic.zacdn.com/wg4qiGb0sFVvz_8zkSpPREj-5fE=/fit-in/346x500/filters:quality(90):fill(ffffff)/http://static.id.zalora.net/p/ocean-toy-0853-7195672-1.jpg">
-                    <p class="title">Mainan Anak</p>
-
-                </a>
-            </div>
-            <div>
-                <a class="card-kategori" href="/kategori">
-                    <img
-                        src="https://dynamic.zacdn.com/wg4qiGb0sFVvz_8zkSpPREj-5fE=/fit-in/346x500/filters:quality(90):fill(ffffff)/http://static.id.zalora.net/p/ocean-toy-0853-7195672-1.jpg">
-                    <p class="title">Mainan Anak</p>
-
-                </a>
-            </div>
-            <div>
-                <a class="card-kategori" href="/kategori">
-                    <img
-                        src="https://dynamic.zacdn.com/wg4qiGb0sFVvz_8zkSpPREj-5fE=/fit-in/346x500/filters:quality(90):fill(ffffff)/http://static.id.zalora.net/p/ocean-toy-0853-7195672-1.jpg">
-                    <p class="title">Mainan Anak</p>
-
-                </a>
+        <h4 class="text-center fw-bold">Kategori</h4>
+        <div id="kategori" class="">
+            <div class="row" style="height: 150px">
+                @for($i = 0; $i < 6; $i++)
+                    <div class="col shine mx-2"></div>
+                @endfor
             </div>
         </div>
 
@@ -58,79 +31,14 @@
         <div>
             <h4 class="mb-5 text-center fw-bold">Rekomendasi Untukmu</h4>
 
-            <div class="row">
-
-
-                <div class="col-lg-3">
-                    <a class="cardku" href="/detail">
-                        <img
-                            src="https://images.tokopedia.net/img/cache/900/product-1/2020/3/23/97199234/97199234_8a94e9d7-d20a-418c-a869-6744090c5407_684_684.jpg" />
-                        <div class="content">
-                            <p class="title mb-0">Mainan Lego</p>
-                            <p class="description mb-0">Mainan lego untuk anak2</p>
-
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a class="cardku" href="/detail">
-                        <img
-                            src="https://images.tokopedia.net/img/cache/900/product-1/2020/3/23/97199234/97199234_8a94e9d7-d20a-418c-a869-6744090c5407_684_684.jpg" />
-                        <div class="content">
-                            <p class="title mb-0">Mainan Lego</p>
-                            <p class="description mb-0">Mainan lego untuk anak2</p>
-
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a class="cardku" href="/detail">
-                        <img
-                            src="https://images.tokopedia.net/img/cache/900/product-1/2020/3/23/97199234/97199234_8a94e9d7-d20a-418c-a869-6744090c5407_684_684.jpg" />
-                        <div class="content">
-                            <p class="title mb-0">Mainan Lego</p>
-                            <p class="description mb-0">Mainan lego untuk anak2</p>
-
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a class="cardku" href="/detail">
-                        <img
-                            src="https://images.tokopedia.net/img/cache/900/product-1/2020/3/23/97199234/97199234_8a94e9d7-d20a-418c-a869-6744090c5407_684_684.jpg" />
-                        <div class="content">
-                            <p class="title mb-0">Mainan Lego</p>
-                            <p class="description mb-0">Mainan lego untuk anak2</p>
-
-                        </div>
-                    </a>
-                </div>
+            <div class="row" id="produk" style="min-height: 400px">
+                @for($i = 0; $i < 4; $i++)
+                    <div class="col shine mx-2"></div>
+                @endfor
             </div>
 
-            <!-- Modal Tambah-->
-            <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Form Register</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="formFile" class="form-label">Payment Slip</label>
-                                    <input class="form-control" type="file" id="formFile">
-                                </div>
 
-
-                                <div class="mb-4"></div>
-                                <button type="submit" class="btn btn-primary">Save</button>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        </div>
     </section>
 
 
@@ -139,28 +47,92 @@
 @section('script')
 
     <script>
-        $(document).ready(function() {
-            $('.slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
-                autoplay: true,
-                autoplaySpeed: 2000,
-                arrows: false
-            });
-        });
-    </script>
+        $(document).ready(function () {
 
-    <script>
-        $(document).ready(function() {
-            $('.slider-kategori').slick({
-                infinite: true,
-                slidesToShow: 4,
-                slidesToScroll: 1
-            });
+            getBaner();
+            getkategori();
+            getproduk();
         });
+
+        function getkategori() {
+            $.get('/kategori', function (data) {
+                if (data.length > 0) {
+                    var kategori = $('#kategori');
+                    kategori.empty();
+                    $('#kategori').addClass('slider-kategori');
+                    $.each(data, function (key, value) {
+                        kategori.append('<div>\n' +
+                            '                <a class="card-kategori d-flex flex-column" href="/produk?kategori=' + value['nama_kategori'] + '">\n' +
+                            '                    <img\n' +
+                            '                         src="' + value['url_foto'] + '">\n' +
+                            '                    <p class="title">' + value['nama_kategori'] + '</p>\n' +
+                            '                </a>\n' +
+                            '            </div>')
+                    })
+                    $('.slider-kategori').slick({
+                        infinite: true,
+                        slidesToShow: 6,
+                        slidesToScroll: 1
+                    });
+                } else {
+                    kategori.append('<h4 class="text-center">Tidak ada kategori</h4>')
+                }
+
+            })
+        }
+
+        function getBaner() {
+            $.get('/baner', function (data) {
+                if (data.length > 0) {
+                    var slider = $('#slider');
+                    slider.empty();
+                    $('#slider').addClass('slider');
+                    $.each(data, function (key, value) {
+                        slider.append('<img  src="'+value['url_gambar']+'"/>')
+                    })
+                    $('.slider').slick({
+                        dots: true,
+                        infinite: true,
+                        speed: 500,
+                        fade: true,
+                        cssEase: 'linear',
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        arrows: false
+                    });
+                }else{
+                    slider.append('<h4 class="text-center">Tidak ada baner</h4>')
+                }
+            })
+        }
+
+        function getproduk() {
+            $.get('/get-produk-recomend', function (data) {
+                console.log(data)
+                if (data.length > 0) {
+                    var produk = $('#produk');
+                    produk.empty();
+
+                    $.each(data, function (key, value) {
+                        var foto = value['get_image'].length > 0 ? value['get_image'][0]['url_foto'] : "{{asset('/static-image/noimage.jpg')}}";
+                        produk.append('<div class="col-lg-3 col-md-6 col-sm-12">\n' +
+                            '                    <a class="cardku" href="/produk/detail/' + value['id'] + '">\n' +
+                            '                        <img\n' +
+                            '                            src="' + foto + '"/>\n' +
+                            '                        <div class="content">\n' +
+                            '                            <p class="title mb-0">' + value['nama_produk'] + '</p>\n' +
+                            '                            <p class="description mb-0">' + value['get_kategori']['nama_kategori'] + '</p>\n' +
+                            '                            <p class="description mb-0">Rp. ' + value['harga'].toLocaleString() + '</p>\n' +
+                            '\n' +
+                            '                        </div>\n' +
+                            '                    </a>\n' +
+                            '                </div>')
+                    })
+                } else {
+                    produk.append('<h4 class="text-center">Tidak ada kategori</h4>')
+                }
+            })
+        }
     </script>
 
 @endsection

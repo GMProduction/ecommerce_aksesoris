@@ -53,6 +53,53 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
 
+        'imageProfile' => [
+            'driver' => 'local',
+            'root' => public_path() . '/images/profile',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
+        'imageBank' => [
+            'driver' => 'local',
+            'root' => public_path() . '/images/bank',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+        'imagePayment' => [
+            'driver' => 'local',
+            'root' => public_path() . '/images/payment',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+        'imageKategori' => [
+            'driver' => 'local',
+            'root' => public_path() . '/images/kategori',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
+        'imageProduk' => [
+            'driver' => 'local',
+            'root' => public_path() . '/images/produk',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
+        'imageBaner' => [
+            'driver' => 'local',
+            'root' => public_path() . '/images/baner',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
+        'imageBukti' => [
+            'driver' => 'local',
+            'root' => public_path() . '/images/bukti',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

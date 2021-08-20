@@ -23,12 +23,12 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="category">Selamat datang Joko</p>
+                    <p class="category">Selamat datang {{auth()->user()->nama}}</p>
                     <!-- Nav tabs -->
                     <div class="card">
                         <div class="card-header">
                             <ul class="nav nav-tabs justify-content-center" role="tablist">
-                               
+
                                 <li class="nav-item">
                                     <a id="keranjang" class="nav-link" data-toggle="tab" href="/user/keranjang" role="tab">
                                         <i class="bx bx-cart"></i> Keranjang
@@ -37,12 +37,17 @@
 
                                 <li class="nav-item">
                                     <a id="pembayaran" class="nav-link" data-toggle="tab" href="/user/pembayaran" role="tab">
-                                        <i class="bx bx-time-five"></i> Menunggu Pembayaran
+                                        <i class="bx bx-time-five"></i> Pembayaran
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a id="menunggu" class="nav-link" data-toggle="tab" href="/user/menunggu" role="tab">
-                                        <i class='bx bx-message-rounded-edit'></i>Menunggu Konfirmasi
+                                        <i class='bx bx-message-rounded-edit'></i> Menunggu Konfirmasi
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="dikemas" class="nav-link" data-toggle="tab" href="/user/dikemas" role="tab">
+                                        <i class='bx bxs-box'></i> Dikemas
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -58,20 +63,20 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a id="profil" class="nav-link" data-toggle="tab" href="user/profil" role="tab">
+                                    <a id="profil" class="nav-link" data-toggle="tab" href="/user/profile" role="tab">
                                         <i class='bx bx-user'></i> Profil
                                     </a>
                                 </li>
 
                             </ul>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="min-height: 23vh">
                             <!-- Tab panes -->
                             @yield('contentUser')
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -90,6 +95,7 @@
             $("#menunggu").removeClass("active");
             $("#proses").removeClass("active");
             $("#pengiriman").removeClass("active");
+            $("#dikemas").removeClass("active");
             $("#selesai").removeClass("active");
             $("#profil").removeClass("active");
 

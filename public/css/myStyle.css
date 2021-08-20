@@ -102,17 +102,18 @@ body {
   color: #39cbbb;
 }
 
-.slider-kategori {
+.   slider-kategori {
   padding: 16px;
 }
 
 .slider-kategori .card-kategori {
   all: unset;
-  height: 70px;
+  /*height: 70px;*/
   padding: 16px;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
+    flex-direction: column !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -127,21 +128,27 @@ body {
 
 .slider-kategori .card-kategori .title {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 0;
 }
 
 .slider-kategori .card-kategori img {
   border-radius: 15px;
+    /*border: 1px solid #cccccc;*/
   -o-object-fit: cover;
      object-fit: cover;
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   margin-right: 10px;
 }
 
-.slider-kategori .card-kategori:hover {
+.slider-kategori .card-kategori:hover  {
   background-color: #39cbbb;
+    color: white;
+
+}
+.slider-kategori .card-kategori:hover img {
+    background-color: white;
 }
 
 .slider img {
@@ -208,6 +215,7 @@ a .nav-link {
 .cardku:hover {
   -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 3px solid red;
 }
 
 .cardku .slick-prev:before,

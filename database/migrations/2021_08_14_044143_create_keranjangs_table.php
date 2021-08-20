@@ -21,6 +21,9 @@ class CreateKeranjangsTable extends Migration
             $table->bigInteger('total_harga');
             $table->bigInteger('id_pesanan')->unsigned()->nullable(true);
             $table->foreign('id_pesanan')->references('id')->on('pesanans');
+            $table->text('keterangan')->nullable(true)->default(null);
+            $table->bigInteger('id_user')->unsigned()->nullable(true);
+            $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }

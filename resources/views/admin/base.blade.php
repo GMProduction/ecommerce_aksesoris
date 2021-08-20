@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,46 +23,58 @@
     <!-- custom css -->
 
     <script src="{{ asset('js/swal.js') }}"></script>
-
+    @yield('css')
 </head>
 
 <body>
+<style>
+    .setActive {
+        background-color: #ffffff26;
+    }
+</style>
     <!-- Side-Nav -->
     <div class="side-navbar active-nav d-flex justify-content-between  flex-wrap flex-column" id="sidebar">
         <ul class="nav flex-column text-white w-100 h-100">
-            <a href="#" class="nav-link h3 text-white my-2">
-                Percetakan
+            <a href="#" class="nav-link h5 text-white my-2">
+                Hi, {{auth()->user()->nama}}
             </a>
 
 
 
-            <a href="/admin">
+            <a href="/admin" id="dashboard">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-dashboard"></i>
                     <span class="mx-2">Dashboard</span>
                 </li>
             </a>
 
-            <a href="/admin/kategori">
+            <a href="/admin/kategori" id="kategori">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-cube"></i>
                     <span class="mx-2">Master Kategori</span>
                 </li>
             </a>
-            <a href="/admin/produk">
+            <a href="/admin/produk" id="produk">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-cube"></i>
                     <span class="mx-2">Master Produk</span>
                 </li>
             </a>
-            <a href="/admin/bank">
+            <a href="/admin/bank" id="bank">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-cube"></i>
                     <span class="mx-2">Master Bank</span>
                 </li>
             </a>
 
-            <a href="/admin/pelanggan">
+            <a href="/admin/baner" id="baner">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-cube"></i>
+                    <span class="mx-2">Master Baner</span>
+                </li>
+            </a>
+
+            <a href="/admin/pelanggan" id="pelanggan">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-group"></i>
                     <span class="mx-2">Data Pelanggan</span>
@@ -72,14 +83,20 @@
             </a>
 
 
-            <a href="/admin/pesanan">
+            <a href="/admin/pesanan" id="pesanan">
                 <li href="#" class="nav-link t-white">
                     <i class="bx bxs-file"></i>
                     <span class="mx-2">Data Pesanan</span>
                 </li>
 
             </a>
+            <a href="/admin/laporan" id="laporan">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-file"></i>
+                    <span class="mx-2">Data Laporan</span>
+                </li>
 
+            </a>
 
 
 
@@ -114,6 +131,8 @@
     <script src="{{ asset('js/myStyle.js') }}"></script>
     <script src="{{ asset('js/sidebar.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ asset('js/dialog.js') }}"></script>
+    <script src="{{ asset('js/moment.js') }}"></script>
     @yield('script')
 </body>
 

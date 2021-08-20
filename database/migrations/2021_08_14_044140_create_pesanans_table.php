@@ -18,6 +18,7 @@ class CreatePesanansTable extends Migration
             $table->dateTime('tanggal_pesanan');
             $table->text('alamat_pengiriman');
             $table->integer('biaya_pengiriman');
+            $table->tinyInteger('status_pesanan')->default(0);
             $table->bigInteger('id_user')->unsigned()->nullable(true);
             $table->foreign('id_user')->references('id')->on('users');
             $table->bigInteger('total_harga');

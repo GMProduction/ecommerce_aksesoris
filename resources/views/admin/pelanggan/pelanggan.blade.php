@@ -1,7 +1,7 @@
 @extends('admin.base')
 
 @section('title')
-    Data Barang
+    Data Pelanggan
 @endsection
 
 @section('content')
@@ -26,51 +26,32 @@
 
             <table class="table table-striped table-bordered ">
                 <thead>
-                    <th>
-                        #
-                    </th>
-                    <th>
-                        Username
-                    </th>
-                    <th>
-                        Nama Pelanggan
-                    </th>
-
-                    <th>
-                        Alamat
-                    </th>
-
-                    <th>
-                        No Hp
-                    </th>
-
-
-
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Alamat</th>
+                    <th>No Hp</th>
+                </tr>
                 </thead>
 
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        Efin123
-                    </td>
-                    <td>
-                        Erfin Aditya
-                    </td>
-                    <td>
-                        Sukoharjo
-                    </td>
-                    <td>
-                        0878798745
-                    </td>
-
-                </tr>
+                @forelse($data as $key => $d)
+                    <tr>
+                        <td>{{$key + 1}}</td>
+                        <td>{{$d->username}}</td>
+                        <td>{{$d->nama}}</td>
+                        <td>{{$d->alamat}}</td>
+                        <td>{{$d->no_hp}}</td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="5" class="text-center">Tidak ada data pelanggan</td>
+                    </tr>
+                @endforelse
 
             </table>
 
         </div>
-
 
 
     </section>

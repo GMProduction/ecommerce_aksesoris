@@ -14,362 +14,274 @@
 
     <section class="m-2">
 
-
         <div class="table-container">
 
-
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5>Data Pesanan</h5>
-
-            </div>
-
-
-            <table class="table table-striped table-bordered ">
-                <thead>
-                    <th>
-                        #
-                    </th>
-                    <th>
-                        Nama Pelanggan
-                    </th>
-                    <th>
-                        Produk
-                    </th>
-
-                    <th>
-                        Qty
-                    </th>
-
-                    <th>
-                        Total Harga
-                    </th>
-
-                    <th>
-                        Status Pengerjaan
-                    </th>
-
-                    <th>
-                        Status Pembayaran
-                    </th>
-
-
-                    <th>
-                        Action
-                    </th>
-
-                </thead>
-
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        Erfin
-                    </td>
-                    <td>
-                        Undangan Tebal
-                    </td>
-                    <td>
-                        100
-                    </td>
-                    <td>
-                        1000000
-                    </td>
-                    <td>
-                        Proses Desain
-                    </td>
-                    <td>
-                        Sudah
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-success btn-sm m-1" data-bs-toggle="modal"
-                            data-bs-target="#detail">Detail</button>
-                        <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal"
-                            data-bs-target="#kirimDesain">Kirim Desain</button>
-                        <a type="button" class="btn btn-warning btn-sm m-1 " href="https://wa.me/6287879878">Chat</a>
-                        <button type="button" class="btn btn-primary btn-sm m-1" data-bs-toggle="modal"
-                            data-bs-target="#buatharga">Buat Harga</button>
-                    </td>
-                </tr>
-
-            </table>
-
-        </div>
-
-
-        <div>
-
-
-            <!-- Modal Detail-->
-            <div class="modal fade" id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                            <a style="cursor: pointer"
-                                href="https://images.tokopedia.net/img/cache/900/product-1/2020/4/10/22258225/22258225_4e32e5f1-82ec-47bd-8202-5b0ca54ded39_1000_1000"
-                                target="_blank">
-                                <img src="https://images.tokopedia.net/img/cache/900/product-1/2020/4/10/22258225/22258225_4e32e5f1-82ec-47bd-8202-5b0ca54ded39_1000_1000"
-                                    style="width: 100%; height: 300px; object-fit: cover" />
-                            </a>
-
-                            <div class="row mt-5">
-                                <div class="col-8">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="mb-3">
-                                                <label for="dNamaProduk" class="form-label">Nama Produk</label>
-                                                <input type="text" class="form-control" readonly id="dNamaProduk">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="dNamaPelanggan" class="form-label">Nama Pelanggan</label>
-                                                <input type="text" class="form-control" readonly id="dNamaPelanggan">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="dPakaiLaminasi" class="form-label">Pakai Laminasi</label>
-                                                <input type="text" class="form-control" readonly id="dPakaiLaminasi">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="dPakaiLaminasi" class="form-label">Jenis Kertas</label>
-                                                <input type="text" class="form-control" readonly id="dPakaiLaminasi">
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="col-6">
-
-                                            <div class="mb-3">
-                                                <label for="dQty" class="form-label">Qty </label>
-                                                <input type="text" class="form-control" readonly id="dQty">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="dhargaSatuan" class="form-label">Harga Satuan</label>
-                                                <input type="text" class="form-control" readonly id="dhargaSatuan">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="dhargaLaminasi" class="form-label">Harga Laminasi</label>
-                                                <input type="text" class="form-control" readonly id="dhargaLaminasi">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="dBiayaOngkir" class="form-label">Biaya Ongkir</label>
-                                                <input type="text" class="form-control" readonly id="dBiayaOngkir">
-                                            </div>
-
-
-                                            <div class="mb-3">
-                                                <label for="dTotalHarga" class="form-label">Total Harga</label>
-                                                <input type="text" class="form-control" readonly id="dTotalHarga">
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="hPakaiLaminasi" class="form-label">Keterangan</label>
-                                        <textarea type="text" class="form-control" readonly id="hPakaiLaminasi"></textarea>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-4 border rounded p-3">
-                                    <div class="mb-3">
-                                        <label for="dStatusDesain" class="form-label">Status Desain</label>
-                                        <input type="text" class="form-control" readonly id="dStatusDesain">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <a for="dBuktiTransfer" class="d-block">Bukti Transfer</a>
-                                        <a style="cursor: pointer"
-                                            href="https://images.tokopedia.net/img/cache/900/product-1/2020/4/10/22258225/22258225_4e32e5f1-82ec-47bd-8202-5b0ca54ded39_1000_1000"
-                                            target="_blank">
-                                            <img src="https://images.tokopedia.net/img/cache/900/product-1/2020/4/10/22258225/22258225_4e32e5f1-82ec-47bd-8202-5b0ca54ded39_1000_1000"
-                                                style="width: 100px; height: 50px; object-fit: cover" />
-                                        </a>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="kategori" class="form-label">Pembayaran</label>
-                                        <div class="d-flex">
-                                            <button type="submit" class="btn btn-sm btn-success me-2">Terima</button>
-                                            <button type="submit" class="btn btn-sm btn-danger">Tolak</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="kategori" class="form-label">Proses Pengerjaan</label>
-                                        <div class="d-flex">
-                                            <select class="form-select" aria-label="Default select example" name="kategori">
-                                                <option selected>Pilih</option>
-                                                <option value="1">Menunggu Harga Admin</option>
-                                                <option value="1">Menunggu Konfirmasi Harga</option>
-                                                <option value="1">Menunggu Proses</option>
-                                                <option value="2">Proses desain</option>
-                                                <option value="3">Proses Pengiriman</option>
-                                                <option value="3">Selesai</option>
-                                            </select>
-                                            <a class="btn btn-primary ms-2"><i class="bx bxs-check-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Modal Buat Harga-->
-            <div class="modal fade" id="buatharga" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                            <a style="cursor: pointer"
-                                href="https://images.tokopedia.net/img/cache/900/product-1/2020/4/10/22258225/22258225_4e32e5f1-82ec-47bd-8202-5b0ca54ded39_1000_1000"
-                                target="_blank">
-                                <img src="https://images.tokopedia.net/img/cache/900/product-1/2020/4/10/22258225/22258225_4e32e5f1-82ec-47bd-8202-5b0ca54ded39_1000_1000"
-                                    style="width: 100%; height: 300px; object-fit: cover" />
-                            </a>
-
-                            <div class="row mt-5 ">
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label for="hNamaProduk" class="form-label">Nama Produk</label>
-                                        <input type="text" class="form-control" readonly id="hNamaProduk">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="hNamaPelanggan" class="form-label">Nama Pelanggan</label>
-                                        <input type="text" class="form-control" readonly id="hNamaPelanggan">
-                                    </div>
-
-
-                                    <div class="mb-3">
-                                        <label for="hPakaiLaminasi" class="form-label">Pakai Laminasi</label>
-                                        <input type="text" class="form-control" readonly id="hPakaiLaminasi">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="hPakaiLaminasi" class="form-label">Keterangan</label>
-                                        <textarea type="text" class="form-control" readonly id="hPakaiLaminasi"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-4 ">
-                                    <div class="mb-3">
-                                        <label for="hBiayaOngkir" class="form-label">Biaya Ongkir</label>
-                                        <input type="text" class="form-control" readonly id="hBiayaOngkir">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="hJenisKertas" class="form-label">Jenis Kertas</label>
-                                        <input type="text" class="form-control" readonly id="hJenisKertas">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="hQty" class="form-label">Qty </label>
-                                        <input type="text" class="form-control" readonly id="hQty">
-                                    </div>
-
-
-
-                                </div>
-
-                                <div class="col-4 border rounded p-3">
-
-                                    <label for="hHargaSatuan" class="form-label">Harga Satuan</label>
-                                    <input type="text" class="form-control" id="hHargaSatuan">
-
-                                    <div class="mb-3">
-                                        <label for="hHargaLaminasi" class="form-label">Harga Laminasi</label>
-                                        <input type="text" class="form-control" id="hHargaLaminasi">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="dTotalHarga" class="form-label">Total Harga</label>
-                                        <input type="text" class="form-control" readonly id="dTotalHarga">
-                                    </div>
-
-                                    <button type="button" class="btn btn-primary ">Submit Harga</button>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Kirim Desain-->
-            <div class="modal fade" id="kirimDesain" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Kirim Desain</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                            <form>
-                                <div class="mt-3 mb-2">
-                                    <label for="gambar" class="form-label">Gambar</label>
-                                    <input class="form-control" type="file" id="gambar">
-                                </div>
-
-
-                                <div class="mb-4"></div>
-                                <button type="submit" class="btn btn-primary">Kirim</button>
+            <div class="d-flex">
+                <h5 class="mb-3">Pesanan</h5>
+
+                <div class="ms-auto">
+                    <div class="mb-3">
+                        <label for="kategori" class="form-label">Status Pembayaran</label>
+                        <div class="d-flex">
+                            <form id="formCari" action="/admin/pesanan">
+                                <select class="form-select" aria-label="Default select example" id="statusCari" name="status">
+                                    <option selected value="">Semua</option>
+                                    <option value="Menunggu Pembayaran">Menunggu Pembayaran</option>
+                                    <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                                    <option value="Diproses">Diproses</option>
+                                    <option value="Dikirim">Dikirim</option>
+                                    <option value="Selesai">Selesai</option>
+                                </select>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <table class="table table-striped table-bordered ">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Tanggal Pesan</th>
+                    <th>Total Harga</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+
+                @forelse($data as $key => $d)
+                    <tr>
+                        <td>{{$key+1}}</td>
+                        <td>{{$d->getPelanggan->nama}}</td>
+                        <td>{{date('d F Y', strtotime($d->tanggal_pesanan))}}</td>
+                        <td>Rp. {{number_format($d->total_harga, 0)}}</td>
+                        <td>{{$d->status_pesanan == 1 ? 'Menungu Konfirmasi' : ($d->status_pesanan == 2 ? 'Dikemas' : ($d->status_pesanan == 3 ? 'Dikirim' : ($d->status_pesanan == 4 ? 'Selesai' : ($d->status_pesanan === 5 ? 'Dikembalikan' : 'Menunggu Pembayaran' ))))}}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm" data-id="{{$d->id}}" id="detailData">Detail
+                            </button>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="6" class="text-center">Tidan ada data pesanan</td>
+                    </tr>
+                @endforelse
+
+            </table>
+            <div class="d-flex justify-content-end">
+                {{$data->links()}}
+            </div>
+
+        </div>
+
+
+        <!-- Modal Detail-->
+        <div class="modal fade" id="detail1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row ">
+                            <div class="col-8">
+                                <div class="row  border rounded p-3 g-2">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="dtanggalPesanan" class="form-label fw-bold">Tanggal</label>
+                                            <p id="dtanggalPesanan"></p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="dNamaPelanggan" class="form-label fw-bold">Nama Pelanggan</label>
+                                            <p id="dNamaPelanggan"></p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="dAlamatPengiriman" class="form-label fw-bold">Alamat Pengiriman</label>
+                                            <p id="dAlamatPengirimanKota" class="mb-0"></p>
+                                            <textarea type="text" class="form-control" readonly
+                                                      id="dAlamatPengiriman"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="dNamaPelanggan" class="form-label fw-bold">Detail Expedisi</label>
+                                            <p id="" class="mb-0">Expedisi : <span id="dExpedisi"></span> </p>
+                                            <p id="">Estimasi : <span id="dEstimasi"></span></p>
+                                        </div>
+                                        <p class="mb-0 fw-bold">Biaya</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p>Pesanan</p>
+                                            <h5 class="mb-0" id="dBiaya"></h5>
+
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <p>Ongkir</p>
+                                            <h5 class="mb-0" id="dOngkir"></h5>
+
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="d-flex justify-content-between">
+                                            <p>Total</p>
+                                            <h4 class="mb-5 fw-bold" id="dTotal"></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 border rounded px-3">
+                                <div class="mb-3">
+                                    <a for="dBuktiTransfer" class="d-block">Bukti Transfer</a>
+                                    <a id="dBuktiTransfer" style="cursor: pointer"
+                                       href=""
+                                       target="_blank">
+                                        <img src=""
+                                             style="width: 100px; height: 50px; object-fit: cover"/>
+                                    </a>
+                                </div>
+
+                                <div class="mb-3 d-none" id="btnKonfirmasi">
+                                    <label for="kategori" class="form-label">Konfirmasi Pembayaran</label>
+                                    <div class="d-flex">
+                                        <button type="submit" class="btn btn-sm btn-success me-2" onclick="saveKonfirmasi(2)">Terima</button>
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="saveKonfirmasi(0)">Tolak</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p>Action</p>
+                                    <a class="btn btn-sm btn-primary" id="dChat" target="_blank">chat</a>
+                                    <a class="btn btn-sm btn-warning d-none" id="btnKirim" onclick="saveKonfirmasi(3)">Kirim Barang</a>
+                                </div>
+
+                                <div class="mt-3">
+                                    <p class="mb-1">Status : <span id="dStatus" class="fw-bold"></span></p>
+                                    <p id="dAlasan"></p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="table-container mt-5">
+                            <h5 class="mb-3">Isi Keranjang Pesanan</h5>
+                            <div style="max-height: 300px" class="overflow-auto">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Gambar</th>
+                                        <th>Produk</th>
+                                        <th>Qty</th>
+                                        <th>Keterangan</th>
+                                        <th>Total Harga</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tabelDetail"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 @endsection
 
 @section('script')
     <script>
-        $(document).ready(function() {
-
+        $(document).ready(function () {
+            $('#statusCari').val('{{request('status')}}')
+        })
+        var idPesanan;
+        $(document).on('click', '#detailData', function () {
+            idPesanan = $(this).data('id');
+            getDetail(idPesanan);
+            $('#detail1').modal('show');
         })
 
-        function hapus(id, name) {
-            swal({
-                    title: "Menghapus data?",
-                    text: "Apa kamu yakin, ingin menghapus data ?!",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Berhasil Menghapus data!", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("Data belum terhapus");
+        $(document).on('change', '#statusCari', function () {
+            document.getElementById('formCari').submit();
+        })
+
+        function getDetail() {
+            $.get('/admin/pesanan/' + idPesanan, function (data) {
+                console.log(data);
+                $('#dNamaPelanggan').html(data['get_pelanggan']['nama'])
+                $('#dChat').attr('href','https://wa.me/'+data['get_pelanggan']['no_hp'])
+                $('#dAlamatPengirimanKota').html(data['get_expedisi']['nama_kota'] + ' - ' + data['get_expedisi']['nama_propinsi'])
+                $('#dAlamatPengiriman').html(data['alamat_pengiriman'])
+                $('#dtanggalPesanan').html(moment(data['tanggal_pesanan']).format('DD MMMM YYYY'))
+                var biaya = parseInt(data['total_harga'] - data['biaya_pengiriman']);
+                $('#dBiaya').html(biaya.toLocaleString())
+                $('#dOngkir').html(data['biaya_pengiriman'].toLocaleString())
+                $('#dTotal').html(data['total_harga'].toLocaleString())
+                $('#dBuktiTransfer').attr('href', data['url_pembayaran'])
+                $('#dBuktiTransfer img').attr('src', data['url_pembayaran'])
+                $('#dExpedisi').html(data['get_expedisi']['nama'].toUpperCase()+' ( '+data['get_expedisi']['service']+' )')
+                $('#dEstimasi').html(data['get_expedisi']['estimasi']+' Hari')
+                var status = data['status_pesanan'];
+                var txtStatus = 'Menunggu Pembayaran';
+                $('#btnKonfirmasi').addClass('d-none')
+                $('#btnKirim').addClass('d-none')
+                $('#dAlasan').html('')
+                if (status === 1) {
+                    $('#btnKonfirmasi').removeClass('d-none')
+                    txtStatus = 'Menunggu Konfirmasi'
+                }else if(status === 2){
+                    $('#btnKirim').removeClass('d-none')
+                    txtStatus = 'Dikemas'
+                }else if(status === 3){
+                    txtStatus = 'Dikirim'
+                    if(data['get_retur'] && data['get_retur']['status'] === 0){
+                        txtStatus = 'Minta Retur'
+                        $('#dAlasan').html(data['get_retur']['alasan'])
                     }
-                });
+                }else if(status === 4){
+                    txtStatus = 'Selesai'
+                }else if(status === 5){
+                    txtStatus = 'Dikembalikan'
+                    $('#dAlasan').html(data['get_retur']['alasan'])
+                }
+
+                $('#dStatus').html(txtStatus)
+
+                var tabel = $('#tabelDetail');
+                tabel.empty();
+                $.each(data['get_keranjang'], function (key, value) {
+                    console.log(value['get_produk']['get_image'])
+                    var foto = value['get_produk']['get_image'].length > 0 ? value['get_produk']['get_image'][0]['url_foto'] : '/static-image/noimage.jpg';
+                    tabel.append('<tr>' +
+                        '<td>' + parseInt(key + 1) + '</td>' +
+                        '<td><img src="' + foto + '" height="50"/></td>' +
+                        '<td>' + value['get_produk']['nama_produk'] + '</td>' +
+                        '<td>' + value['qty'] + '</td>' +
+                        '<td>' + value['keterangan'] + '</td>' +
+                        '<td>' + value['total_harga'].toLocaleString() + '</td>' +
+                        '</tr>')
+                })
+            })
+        }
+
+        function saveKonfirmasi(a) {
+            var title = 'Tolak Pembayaran'
+            if (a === 2) {
+                title = 'Terima Pembayaran'
+            }else if(a === 3){
+                title = 'Kirim Pesanan'
+            }
+            var form_data = {
+                'status' : a,
+                '_token' : '{{csrf_token()}}'
+            };
+            saveDataObject(title,form_data,'/admin/pesanan/'+idPesanan,getDetail)
+            return false;
+
         }
     </script>
 
