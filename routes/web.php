@@ -80,6 +80,8 @@ Route::prefix('/admin')->middleware(AdminMiddleware::class)->group(function (){
 
     Route::get('/pesanan', [PesananController::class,'index']);
     Route::match(['post','get'],'/pesanan/{id}', [PesananController::class,'getDetailPesanan']);
+
+    Route::get('/cetaklaporan',[LaporanController::class, 'cetakLaporan']);
 });
 
 Route::get('/kategori', [KategoriController::class,'dataKategori'])->name('produk_kategori');
