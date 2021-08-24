@@ -105,6 +105,11 @@
                       <td class="text-center" colspan="6">Tidak ada pesanan</td>
                   </tr>
               @endforelse
+              <tr>
+                  <td colspan="4"></td>
+                  <td>Grand Total</td>
+                  <td>Rp. {{number_format($total, 0)}}</td>
+              </tr>
             </tbody>
           </table>
 

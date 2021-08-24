@@ -63,7 +63,7 @@ class AuthController extends CustomController
         if ($this->isAuth($credentials)) {
             $redirect = '/';
             if (Auth::user()->roles === 'admin') {
-                $redirect = '/admin';
+                return redirect('/admin');
             }
 
             return redirect()->back();
