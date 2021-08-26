@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PesananController;
 use App\Http\Controllers\Admin\ProdukController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RajaOngkirController;
 use App\Http\Controllers\User\DikemasController;
@@ -41,6 +42,8 @@ Route::get('/', function () {
 Route::post('/login', [AuthController::class,'login']);
 Route::get('/logout', [AuthController::class,'logout']);
 Route::post('/register-member', [AuthController::class, 'registerMember']);
+
+Route::get('/send-email', [EmailController::class,'Email']);
 
 Route::prefix('/user')->middleware(UserMiddleware::class)->group(function (){
     Route::get('/', function () {

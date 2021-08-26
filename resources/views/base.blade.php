@@ -171,6 +171,10 @@
                                 <label for="namaeditbarang" class="form-label t">Password Konfirmasi</label>
                                 <input type="password" class="form-control" id="password" name="password_confirmation" required>
                             </div>
+                            <div class="mb-2 text-left">
+                                <label for="email" class="form-label t">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
                             <div class="mb-2">
                                 <label for="namaeditbarang" class="form-label t">No. Hp</label>
                                 <input type="number" class="form-control" id="no_hp" name="no_hp" required>

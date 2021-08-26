@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendEmail;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PesananController extends Controller
 {
@@ -37,8 +39,19 @@ class PesananController extends Controller
 
     public function getDetailPesanan($id){
         if (\request()->isMethod('POST')){
-            $pesanan = Pesanan::find($id);
+            $pesanan = Pesanan::with('getPelanggan')->find($id);
+            if (\request('status') == '0'){
+                $status = 'Pembayaran Ditolak';
+                $title = 'Konfirmasi Pembayaran';
+            }elseif (\request('status') == '2'){
+                $status = 'Pembayaran Diterima';
+                $title = 'Konfirmasi Pembayaran';
+            }else{
+                $status = 'Pesanan Dikirim';
+                $title = 'Konfirmasi Pengiriman';
+            }
             $pesanan->update(['status_pesanan' => \request('status')]);
+            $this->Email($title,$pesanan, $status);
             return response()->json('berhasil');
         }
         $pesanan = Pesanan::with('getPelanggan')->find($id);
@@ -51,8 +64,23 @@ class PesananController extends Controller
             $pesanan->update(['status_pesanan' => 5]);
         }
         $pesanan->getRetur()->update(['status' => \request('status')]);
+        $this->Email($pesanan);
+
         return response()->json('berhasil');
     }
 
+
+    public function Email($title,$pesanan, $status){
+        Mail::to($pesanan->getPelanggan->email)->send(new SendEmail($title,$pesanan, $status));
+
+        dd('terkirim');
+//        $details = [
+//            'title' => 'Mail from ItSolutionStuff.com',
+//            'data'  => $pesanan,
+//            'status' => $status
+//        ];
+//
+//        return view('email.email')->with($details);
+    }
 
 }

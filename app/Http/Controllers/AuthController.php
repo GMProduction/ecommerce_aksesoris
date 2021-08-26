@@ -21,6 +21,7 @@ class AuthController extends CustomController
             [
                 'username' => 'required|string|unique:users,username',
                 'password' => 'required|string|confirmed',
+               'email' => 'required|string|unique:users,email',
             ]
         );
 
@@ -37,6 +38,7 @@ class AuthController extends CustomController
         $user = User::create(
             [
                 'username' => $fieldUser['username'],
+                'email' => $fieldUser['email'],
                 'roles'    => 'user',
                 'password' => Hash::make($fieldUser['password']),
                 'nama'     => $fieldMember['nama'],
