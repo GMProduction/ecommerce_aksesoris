@@ -30,6 +30,7 @@
                     <th>#</th>
                     <th>Username</th>
                     <th>Nama Pelanggan</th>
+                    <th>Email</th>
                     <th>Alamat</th>
                     <th>No Hp</th>
                 </tr>
@@ -40,6 +41,7 @@
                         <td>{{$key + 1}}</td>
                         <td>{{$d->username}}</td>
                         <td>{{$d->nama}}</td>
+                        <td>{{$d->email}}</td>
                         <td>{{$d->alamat}}</td>
                         <td>{{$d->no_hp}}</td>
                     </tr>
