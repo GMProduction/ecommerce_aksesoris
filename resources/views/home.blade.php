@@ -88,7 +88,7 @@
                     slider.empty();
                     $('#slider').addClass('slider');
                     $.each(data, function (key, value) {
-                        slider.append('<img  src="'+value['url_gambar']+'"/>')
+                        slider.append('<a href="'+value['url_web']+'" target="_blank" style="cursor: pointer"><img  src="'+value['url_gambar']+'"/></a>')
                     })
                     $('.slider').slick({
                         dots: true,

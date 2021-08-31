@@ -34,8 +34,9 @@
                         <td>{{$d->nama_bank}}</td>
                         <td>{{$d->holder_bank}}</td>
                         <td>{{$d->norek}}</td>
-                        <td width="50">
+                        <td width="130">
                             <a class="btn btn-sm btn-primary" id="editData" data-id="{{$d->id}}" data-norek="{{$d->norek}}" data-holder="{{$d->holder_bank}}" data-nama="{{$d->nama_bank}}" data-image="{{$d->url_gambar}}">Edit</a>
+                            <a class="btn btn-sm btn-danger" id="deleteData" data-id="{{$d->id}}" data-holder="{{$d->holder_bank}}" data-nama="{{$d->nama_bank}}">Hapus</a>
                         </td>
                     </tr>
                 @empty
@@ -100,7 +101,7 @@
             $('#tambahkategori #norek').val('')
             $('#tambahkategori #holder_bank').val('')
             $('#tambahkategori #url_gambar').val('')
-            $('#tambahkategori #imgBank').attr('src','')
+            $('#tambahkategori #imgBank').attr('src','').addClass('d-none')
 
             $('#tambahkategori').modal('show')
         })
@@ -111,8 +112,13 @@
             $('#tambahkategori #norek').val($(this).data('norek'))
             $('#tambahkategori #holder_bank').val($(this).data('holder'))
             $('#tambahkategori #url_gambar').val('')
-            $('#tambahkategori #imgBank').attr('src',$(this).data('image'))
+            $('#tambahkategori #imgBank').attr('src',$(this).data('image')).removeClass('d-none')
             $('#tambahkategori').modal('show')
+        })
+
+        $(document).on('click', '#deleteData', function () {
+            deleteData($(this).data('nama')+' '+$(this).data('holder'), window.location.pathname+'/'+$(this).data('id')+'/delete')
+            return false;
         })
 
         function saveKategori() {

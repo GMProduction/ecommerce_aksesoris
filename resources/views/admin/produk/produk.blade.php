@@ -48,7 +48,7 @@
                         <td>
                             <a type="button" class="btn btn-success btn-sm" id="editData" href="/admin/produk/data?id={{$d->id}}">Ubah
                             </a>
-                            <button type="button" class="btn btn-danger btn-sm" onclick="hapus('id', 'nama') ">hapus</button>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="hapus('{{$d->id}}', '{{$d->nama_produk}}') ">hapus</button>
                         </td>
                     </tr>
                 @empty
@@ -70,6 +70,11 @@
         $(document).ready(function () {
 
         })
+
+        function hapus(id,nama) {
+            deleteData(nama, window.location.pathname+'/'+id+'/delete')
+            return false;
+        }
     </script>
 
 @endsection

@@ -54,4 +54,9 @@ class BankController extends CustomController
         $bank = Bank::all();
         return $bank;
     }
+
+    public function delete($id){
+        Bank::destroy($id);
+        return response()->json('berhasil');
+    }
 }

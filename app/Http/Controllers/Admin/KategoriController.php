@@ -54,4 +54,9 @@ class KategoriController extends CustomController
             'msg' => 'berhasil'
         ],200);
     }
+
+    public function delete($id){
+        Kategori::destroy($id);
+        return response()->json('berhasil');
+    }
 }

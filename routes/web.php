@@ -64,11 +64,16 @@ Route::prefix('/admin')->middleware(AdminMiddleware::class)->group(function (){
     Route::get('/', [DashboardController::class, 'index']);
 
     Route::match(['get','post'],'/bank', [BankController::class,'index']);
+    Route::get('/bank/{id}/delete', [BankController::class,'delete']);
+
+
     Route::get('/kategori', [KategoriController::class,'index']);
+    Route::get('/kategori/{id}/delete', [KategoriController::class,'delete']);
     Route::post('/kategori', [KategoriController::class,'addKategori']);
 
     Route::prefix('/produk')->group(function (){
         Route::get('/', [ProdukController::class,'index']);
+        Route::get('/{id}/delete', [ProdukController::class,'delete']);
         Route::match(['get','post'],'/data', [ProdukController::class,'data']);
         Route::get('/kategori', [KategoriController::class,'dataKategori'])->name('produk_kategori');
         Route::post('/kategori', [KategoriController::class,'addKategori']);

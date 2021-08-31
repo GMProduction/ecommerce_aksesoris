@@ -109,4 +109,18 @@ class ProdukController extends CustomController
             unlink('../public'.$name);
         }
     }
+
+    public function delete($id){
+        $image = FotoProduk::where('id_produk','=','$id')->get();
+        foreach ($image as $im){
+            if (file_exists('../public'.$im->url_foro)) {
+                unlink('../public'.$im->url_foro);
+            }
+        }
+
+        Produk::destroy($id);
+
+        return response()->json('berhasil');
+
+    }
 }
