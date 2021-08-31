@@ -6,6 +6,7 @@ use App\Helper\CustomController;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,6 +26,7 @@ class ProfileController extends CustomController
                     'nama'   => 'required|string',
                     'alamat' => 'required',
                     'no_hp'  => 'required',
+                    'email'  => 'required',
                 ]
             );
             $number = strpos($field['no_hp'],"0") == 0 ? preg_replace('/0/','62',$field['no_hp'],1) : $field['no_hp'];
@@ -46,6 +48,17 @@ class ProfileController extends CustomController
                     '201'
                 );
             }
+
+            $cekEmail        = User::where([['id', '!=', Auth::id()], ['email', '=', $field['email']]])->first();
+            if ($cekEmail) {
+                return response()->json(
+                    [
+                        "msg" => "The email has already been taken.",
+                    ],
+                    '201'
+                );
+            }
+            Arr::set($fieldData, 'email',$field['email']);
             $user = User::find(Auth::id());
 
             $user->update($fieldData);

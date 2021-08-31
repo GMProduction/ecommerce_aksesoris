@@ -29,7 +29,7 @@
                             <input type="password" class="form-control" readonly id="password_confirmation" name="password_confirmation" value="*****">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">No Hp</label>
+                            <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" readonly id="email" name="email" value="{{$data->email}}">
                         </div>
                         <div class="mb-3">
