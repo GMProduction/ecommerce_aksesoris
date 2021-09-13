@@ -56,7 +56,6 @@ class PesananController extends Controller
             }
 //            $pesanan->update(['status_pesanan' => \request('status')]);
             $dis = dispatch(new \App\Jobs\SendEmailJob($title, $pesanan, $status));
-            dd($dis);
             return response()->json('berhasil');
         }
         $pesanan = Pesanan::with('getPelanggan')->find($id);
