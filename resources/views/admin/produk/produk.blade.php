@@ -57,7 +57,9 @@
                     </tr>
                 @endforelse
             </table>
-
+            <div class="d-flex justify-content-end">
+                {{$data->links()}}
+            </div>
         </div>
 
     </section>

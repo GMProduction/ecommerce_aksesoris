@@ -27,9 +27,9 @@ class ProdukController extends CustomController
                 }
             )->sum('qty');
             $sisa = (int) $d->stok - (int) $laku;
-            Arr::add($data[$key],'sisa', $sisa);
+            Arr::set($data[$key],'sisa', $sisa);
         }
-        return view('admin.produk.produk')->with(['data' => $data]);
+        return view('admin.produk.produk')->with(['data' => $produk]);
     }
 
     public function data(){
