@@ -25,7 +25,7 @@ class CreatePesanansTable extends Migration
             $table->bigInteger('id_bank')->unsigned()->nullable(true);
             $table->foreign('id_bank')->references('id')->on('banks');
             $table->dateTime('tanggal_pembayaran')->nullable(true)->default(null);
-            $table->text('url_pembayaran')->nullable(true)->default(true);
+            $table->text('url_pembayaran')->nullable(true)->default(null);
             $table->timestamps();
         });
     }
