@@ -42,6 +42,6 @@ class SendEmail extends Mailable
             'status' => $this->pesanan
         ];
 
-        return $this->view('email.email')->with($details);
+        return $this->view('email.email')->with($details)->from('noreply@domain.com','Kaka')->subject('test email');
     }
 }
